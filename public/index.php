@@ -17,6 +17,7 @@ require $base . '/vendor/autoload.php';
 HttpKernel::run(
     Bootstrap::builder($base)
         ->withContainerCache($base . '/var/cache/container.php')
+        ->withConfigurationCache($base . '/var/cache/config.php')
         ->withConfiguration(['view.assets.path' => __DIR__]),
     __DIR__ . '/503.html',
 );

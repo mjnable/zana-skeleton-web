@@ -3,6 +3,12 @@
 All Zana packages share one version number and are released together. A release that did
 not change this project is not listed.
 
+## 2.4.0 — unreleased
+
+### Changed
+
+- Uses the configuration cache in production (`var/cache/config.php`).
+
 ## 2.3.0 — 2026-10-26
 
 First release (FE-17). A website in two languages with page metadata, versioned assets, a language

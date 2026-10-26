@@ -12,6 +12,7 @@ require $base . '/vendor/autoload.php';
 exit(ConsoleKernel::runApplication(
     Bootstrap::builder($base)
         ->withContainerCache($base . '/var/cache/container.php')
+        ->withConfigurationCache($base . '/var/cache/config.php')
         ->recompileStaleContainerInConsole()
         ->build(),
 ));
