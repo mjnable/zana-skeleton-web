@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.5",
         "mj-zana/cache": "^2.4",
-        "mj-zana/console": "^2.4",
+        "mj-zana/console": "^2.5",
         "mj-zana/core": "^2.4",
         "mj-zana/http": "^2.4",
         "mj-zana/routing": "^2.4",

@@ -54,8 +54,12 @@ It writes two archives from the last commit, with the production dependencies in
 - `build/public_html.zip`: unpack it into `public_html`. Its `index.php` finds the project in
   `../website` (`--folder` picks another name).
 
+It finds Composer on the `PATH`, on Windows too; `--composer` points at another one, `-v` shows its
+output, and `--timeout` (600 seconds) stops a build that hangs. The command comes from
+`mj-zana/console`, so `composer update` brings its fixes.
+
 Create `~/website/.env` on the server, and delete `~/website/var/cache` after each upload so the
-container is compiled again.
+container and the configuration are read again.
 
 The [deployment guide](https://github.com/mjnable/zana-docs/blob/main/deployment.md) covers all of it.
 

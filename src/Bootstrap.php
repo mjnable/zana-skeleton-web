@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
-use App\Console\ReleaseBuildCommand;
 use Zana\Cache\CacheServiceProvider;
-use Zana\Console\ConsoleKernel;
 use Zana\Console\ConsoleServiceProvider;
-use Zana\Container\Contracts\ServiceCollectionInterface;
 use Zana\Core\Application;
 use Zana\Core\ApplicationBuilder;
 use Zana\Http\HttpServiceProvider;
@@ -19,7 +16,8 @@ use Zana\View\ViewServiceProvider;
 
 /**
  * The application: the framework's providers here, the features in the
- * modules listed in config/modules.php.
+ * modules listed in config/modules.php. The console provider brings the
+ * deployment commands, release:build included.
  */
 final class Bootstrap
 {
@@ -34,9 +32,6 @@ final class Bootstrap
                 SecurityServiceProvider::class,
                 ViewServiceProvider::class,
                 ConsoleServiceProvider::class,
-            )
-            ->withServices(static fn (ServiceCollectionInterface $services) => $services
-                ->singleton(ReleaseBuildCommand::class)
-                ->tag(ConsoleKernel::TAG, ReleaseBuildCommand::class));
+            );
     }
 }

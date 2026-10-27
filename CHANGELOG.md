@@ -3,6 +3,15 @@
 All Zana packages share one version number and are released together. A release that did
 not change this project is not listed.
 
+## 2.5.0 — unreleased
+
+### Changed
+
+- `release:build` comes from `mj-zana/console` (ADR-021), which fixes it on Windows (FE-41). The
+  skeleton's own `src/Release/` and `ReleaseBuildCommand` are removed. Projects created from 2.3 or
+  2.4 should delete them and their registration in `Bootstrap`.
+- Requires `mj-zana/console` ^2.5.
+
 ## 2.4.0 — 2026-10-26
 
 ### Changed
