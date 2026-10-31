@@ -22,6 +22,6 @@ final class AgentsFileTest extends TestCase
 
         $this->assertStringContainsString("This is a Zana {$installed[1]} application", $agents, 'Run: php bin/console make:agents --force');
         $this->assertStringContainsString("https://github.com/mjnable/zana-docs/tree/{$installed[1]}", $agents);
-        $this->assertSame("@AGENTS.md\n", file_get_contents(dirname(__DIR__) . '/CLAUDE.md'));
+        $this->assertSame('@AGENTS.md', trim((string) file_get_contents(dirname(__DIR__) . '/CLAUDE.md')));
     }
 }
