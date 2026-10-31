@@ -3,6 +3,14 @@
 All Zana packages share one version number and are released together. A release that did
 not change this project is not listed.
 
+## 2.9.0 — 2026-11-01
+
+### Changed
+
+- The CI workflow runs `check` after the tests.
+- `AGENTS.md` for Zana 2.9.
+- Requires the Zana packages at ^2.9.
+
 ## 2.8.0 — 2026-11-01
 
 ### Added
