@@ -35,7 +35,10 @@ php bin/console make:page Site Services
 1. On the server, set `APP_ENV=production`, `APP_APP__URL` and `APP_SECURITY__SECRET`, in the
    environment or in `.env`.
 2. Make `var/` writable.
-3. Check the server: `php bin/console doctor`.
+3. Check the server: `php bin/console doctor`, and the mail settings:
+   `php bin/console mail:test you@example.com` once `mj-zana/communication` is installed.
+
+**When a page shows the error page,** the reason is in `var/log/app.log` (`config/logging.php`).
 
 **The document root is `public/`.** When the hosting fixes the document root to the project folder,
 the root `.htaccess` sends every request into `public/`, so `.env`, `config/` and `vendor/` cannot be

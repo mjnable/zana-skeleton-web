@@ -3,6 +3,13 @@
 All Zana packages share one version number and are released together. A release that did
 not change this project is not listed.
 
+## 2.6.0 — unreleased
+
+### Changed
+
+- Installs `mj-zana/logging` and writes warnings and errors to `var/log/app.log`, rotated at 10 MB with
+  5 old files kept (`config/logging.php`, FE-43).
+- Requires the Zana packages at ^2.6.
 ## 2.5.0 — 2026-10-27
 
 ### Changed
