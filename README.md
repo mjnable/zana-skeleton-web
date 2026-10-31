@@ -23,12 +23,23 @@ Open http://localhost:8000. `composer create-project` writes `.env` with a fresh
 | `translations/` | Texts shared by every module |
 | `public/` | The document root: `index.php`, assets, `503.html` |
 | `tests/` | Browser tests: `composer test` |
+| `AGENTS.md` | The rules and workflow for AI coding agents (`CLAUDE.md` and `.github/` point to it) |
 
-Add pages with the maker (`composer require --dev mj-zana/maker`):
+Add pages with the maker, installed for development:
 
 ```
 php bin/console make:page Site Services
 ```
+
+See what the application contains and check it after a change (`--format=json` for agents):
+
+```
+php bin/console inspect
+php bin/console check
+```
+
+After upgrading Zana, write `AGENTS.md` again with `php bin/console make:agents --force`, then add
+back any section of your own; `tests/AgentsFileTest.php` reminds you.
 
 ## Going live
 

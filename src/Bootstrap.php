@@ -10,6 +10,7 @@ use Zana\Core\Application;
 use Zana\Core\ApplicationBuilder;
 use Zana\Http\HttpServiceProvider;
 use Zana\Logging\LoggingServiceProvider;
+use Zana\Maker\MakerServiceProvider;
 use Zana\Routing\RoutingServiceProvider;
 use Zana\Security\SecurityServiceProvider;
 use Zana\Translation\TranslationServiceProvider;
@@ -19,7 +20,8 @@ use Zana\View\ViewServiceProvider;
  * The application: the framework's providers here, the features in the
  * modules listed in config/modules.php. Logging comes first, so errors are
  * written to var/log/app.log (config/logging.php); the console provider brings
- * the deployment commands, release:build included.
+ * the deployment commands, release:build, inspect and check included. The
+ * make: commands are there in development, where mj-zana/maker is installed.
  */
 final class Bootstrap
 {
@@ -35,6 +37,7 @@ final class Bootstrap
                 SecurityServiceProvider::class,
                 ViewServiceProvider::class,
                 ConsoleServiceProvider::class,
+                ...(class_exists(MakerServiceProvider::class) ? [MakerServiceProvider::class] : []),
             );
     }
 }
