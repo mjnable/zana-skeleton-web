@@ -3,6 +3,19 @@
 All Zana packages share one version number and are released together. A release that did
 not change this project is not listed.
 
+## 2.8.0 — 2026-10-31
+
+### Added
+
+- `composer test` also runs the tests in `modules/*/Tests`, where the maker writes them.
+- `config/testing/security.php`: a secret for the `testing` environment, so that tests, generated
+  module tests included, run without `.env` (in CI, for example).
+
+### Changed
+
+- `AGENTS.md` for Zana 2.8, which names the use-case generators (FE-47, FE-49).
+- Requires the Zana packages at ^2.8.
+
 ## 2.7.0 — 2026-10-31
 
 ### Added

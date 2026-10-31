@@ -1,10 +1,10 @@
 # Instructions for AI coding agents
 
-This is a Zana 2.7 application (PHP 8.5). Zana is explicit by design: modules, services and
+This is a Zana 2.8 application (PHP 8.5). Zana is explicit by design: modules, services and
 routes are declared, and mistakes are caught at startup. Follow these rules; do not invent other
 conventions. The documentation for this version is at
-https://github.com/mjnable/zana-docs/tree/2.7, and its index for agents at
-https://raw.githubusercontent.com/mjnable/zana-docs/2.7/llms.txt.
+https://github.com/mjnable/zana-docs/tree/2.8, and its index for agents at
+https://raw.githubusercontent.com/mjnable/zana-docs/2.8/llms.txt.
 
 ## How to work
 
@@ -13,11 +13,18 @@ https://raw.githubusercontent.com/mjnable/zana-docs/2.7/llms.txt.
    configuration keys, packages; add `--format=json` to read it as data, or a section name such as
    `routes`).
 3. **Reuse what exists.** Search the modules for an existing feature, contract or service first.
-4. **Plan.** Decide which module and layers the change belongs to. `php bin/console make:… --dry-run`
-   shows what a generator would write.
+4. **Plan.** Decide which module and layers the change belongs to.
+   `php bin/console make:… --dry-run --format=json` lists the files a generator would write and the
+   lines it would register.
 5. **Generate the structure** with the `make:` commands (`php bin/console list make`) rather than
-   writing boilerplate by hand: they follow the conventions and register what they create.
-6. **Write the business logic** in Domain and Application.
+   writing boilerplate by hand: they follow the conventions and register what they create. A use
+   case exposed over HTTP is one command:
+   `make:feature <Module> <Feature> --field=name:string --field=count:?int --http` (a command or,
+   with `--query`, a query; its handler, API action, route and tests). The domain has
+   `make:entity`, `make:value-object` and `make:repository` (the database implementation and its
+   migration).
+6. **Write the business logic** in Domain and Application: the generated handlers are empty and
+   their tests are marked incomplete until you do.
 7. **Verify:** `php bin/console check` (add `--format=json` to read the findings; each has an id, a
    location and a hint). Fix every error before going on.
 8. **Test:** `composer test`. Add tests for what you changed.
@@ -70,10 +77,10 @@ https://raw.githubusercontent.com/mjnable/zana-docs/2.7/llms.txt.
 |---|---|
 | `php bin/console inspect [section] [--format=json]` | See modules, services, routes, configuration keys |
 | `php bin/console check [--format=json]` | Verify wiring, architecture, routes, migrations |
-| `php bin/console make:… [--dry-run]` | Generate modules, features, entities, controllers, pages, back offices |
+| `php bin/console make:… [--dry-run] [--format=json]` | Generate modules, features and HTTP use cases, entities, value objects, repositories, controllers, pages, back offices |
 | `php bin/console migrate` | Run database migrations |
 | `php bin/console doctor` | Check that a server is ready to run the application |
 | `composer test` | Run the tests |
 
-This file was written by `php bin/console make:agents` for Zana 2.7. Run it again after
+This file was written by `php bin/console make:agents` for Zana 2.8. Run it again after
 upgrading Zana (`--force` replaces it); add project-specific rules in a section of your own below.

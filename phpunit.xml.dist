@@ -9,6 +9,9 @@
         <testsuite name="Site">
             <directory>tests</directory>
         </testsuite>
+        <testsuite name="Modules">
+            <directory suffix="Test.php">modules</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>

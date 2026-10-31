@@ -22,7 +22,7 @@ Open http://localhost:8000. `composer create-project` writes `.env` with a fresh
 | `templates/` | The layout and the error pages |
 | `translations/` | Texts shared by every module |
 | `public/` | The document root: `index.php`, assets, `503.html` |
-| `tests/` | Browser tests: `composer test` |
+| `tests/` | Browser tests: `composer test`, which also runs the tests in `modules/*/Tests` |
 | `AGENTS.md` | The rules and workflow for AI coding agents (`CLAUDE.md` and `.github/` point to it) |
 
 Add pages with the maker, installed for development:
@@ -30,6 +30,17 @@ Add pages with the maker, installed for development:
 ```
 php bin/console make:page Site Services
 ```
+
+For a JSON endpoint, add the packages it needs and register their providers in `src/Bootstrap.php`
+(the command lists them), then generate the whole use case:
+
+```
+composer require mj-zana/mediator mj-zana/ddd mj-zana/serialization mj-zana/validation
+php bin/console make:feature Site RequestQuote --field=email:string --http
+```
+
+The tests run without `.env`: in the `testing` environment, `config/testing/security.php` gives
+them a secret of their own.
 
 See what the application contains and check it after a change (`--format=json` for agents):
 
