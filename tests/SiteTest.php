@@ -29,8 +29,8 @@ final class SiteTest extends ApplicationTestCase
             ->assertOk()
             ->assertSelector('h1', 'About us')
             ->assertSelector('title', 'About us | My website')
-            ->assertSelector('link[rel=canonical][href="http://localhost:8000/en/about"]')
-            ->assertSelector('link[rel=alternate][hreflang=fr][href="http://localhost:8000/fr/a-propos"]');
+            ->assertSelector('link[rel=canonical][href="http://127.0.0.1:8080/en/about"]')
+            ->assertSelector('link[rel=alternate][hreflang=fr][href="http://127.0.0.1:8080/fr/a-propos"]');
 
         $this->browser()->get('/fr/a-propos')
             ->assertOk()

@@ -10,7 +10,11 @@ cd my-site
 composer serve
 ```
 
-Open http://localhost:8000. `composer create-project` writes `.env` with a fresh secret.
+Open http://127.0.0.1:8080. `composer create-project` writes `.env` with a fresh secret.
+
+`composer serve` runs until you stop it, on 127.0.0.1 so that it answers on IPv4 everywhere, and on a port other
+than the API skeleton's (8000), so a website and an API can run side by side. "Address already in use" means
+another server holds the port: stop it, or run `php -S 127.0.0.1:8081 -t public` instead.
 
 ## What is where
 
