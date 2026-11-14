@@ -10,19 +10,19 @@
     ],
     "require": {
         "php": "^8.5",
-        "mj-zana/cache": "^2.22",
-        "mj-zana/console": "^2.22",
-        "mj-zana/core": "^2.22",
-        "mj-zana/http": "^2.22",
-        "mj-zana/logging": "^2.22",
-        "mj-zana/routing": "^2.22",
-        "mj-zana/security": "^2.22",
-        "mj-zana/translation": "^2.22",
-        "mj-zana/view": "^2.22"
+        "mj-zana/cache": "^2.23",
+        "mj-zana/console": "^2.23",
+        "mj-zana/core": "^2.23",
+        "mj-zana/http": "^2.23",
+        "mj-zana/logging": "^2.23",
+        "mj-zana/routing": "^2.23",
+        "mj-zana/security": "^2.23",
+        "mj-zana/translation": "^2.23",
+        "mj-zana/view": "^2.23"
     },
     "require-dev": {
-        "mj-zana/maker": "^2.22",
-        "mj-zana/testing": "^2.22",
+        "mj-zana/maker": "^2.23",
+        "mj-zana/testing": "^2.23",
         "phpunit/phpunit": "^11.5"
     },
     "suggest": {
