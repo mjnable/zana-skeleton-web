@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Site\Presentation\Web;
 
+use Zana\Routing\Attribute\PublicRoute;
 use Zana\Routing\UrlGenerator;
 use Zana\Translation\TranslatorInterface;
 use Zana\View\PageMeta;
 use Zana\View\View;
 
+#[PublicRoute(reason: 'The pages of the public website')]
 final readonly class PageController
 {
     public function __construct(private PageMeta $meta, private UrlGenerator $urls, private TranslatorInterface $translator)
