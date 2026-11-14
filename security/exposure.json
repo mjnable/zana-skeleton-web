@@ -1,0 +1,11 @@
+{
+    "about": "Who may reach each route. Written by php bin/console security:exposure: review each change in the diff, then commit it. check reports a route that is new, or whose access changed, until this file is written again.",
+    "format": 1,
+    "routes": {
+        "GET /en": {"access": "public", "reason": "The pages of the public website"},
+        "GET /en/about": {"access": "public", "reason": "The pages of the public website"},
+        "GET /fr": {"access": "public", "reason": "The pages of the public website"},
+        "GET /fr/a-propos": {"access": "public", "reason": "The pages of the public website"},
+        "GET /locale/{locale}": {"access": "public", "reason": "The language switcher: every visitor may choose a language"}
+    }
+}
