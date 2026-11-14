@@ -7,6 +7,8 @@ not change this project is not listed.
 
 ### Added
 
+- `AGENTS.md` for Zana 2.22: `tests/SecurityTest.php` attacks every route.
+- Requires the Zana packages at ^2.22.
 - `tests/SecurityTest.php` attacks every route in memory with `assertRoutesWithstandAttacks()` (mj-zana/testing 2.22,
   FE-68): a new route is attacked as soon as it exists, and CI fails when one does not withstand it.
 
