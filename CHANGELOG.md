@@ -10,6 +10,7 @@ not change this project is not listed.
 - `composer serve` keeps running past Composer's 300-second limit, and listens on `127.0.0.1:8080`, which answers on IPv4
   everywhere and leaves 8000 to the API skeleton, so the two run side by side (FE-71). `app.url` follows.
 - The container cache line says that it is used in production only (FE-70).
+- The CI workflow says how to run `check` on a migrated database once `mj-zana/database` is installed (FE-69).
 
 ## 2.19.2 — 2026-11-07
 
